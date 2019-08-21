@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "name": "Karthik",
+      "dept": "EEE"
+    },
+    {
+      "id": "2",
+      "name": "Prudhvi",
+      "dept": "Civil"
+    },
+    {
+      "id": "3",
+      "name": "Goutham",
+      "dept": "Cse"
+    },
+    {
+      "id": "4",
+      "name": "G.Raj",
+      "dept": "EEE"
+    },
+    {
+      "id": "5",
+      "name": "Rishi",
+      "dept": "Cse"
+    },
+    {
+      "id": "6",
+      "name": "asksjfbsKJ",
+      "dept": "ksfsdkkj"
+    },
+    {
+      "id": "7",
+      "name": "GUjkm",
+      "dept": "BGJYg"
+    },
+    {
+      "id": "8",
+      "name": "GYHUIJ",
+      "dept": "YG"
+    }
+  ]
+}

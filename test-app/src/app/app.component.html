@@ -1,0 +1,88 @@
+
+
+<h1 style="text-align: center; font-family: Georgia, 'Times New Roman', Times, serif ">SUBMIT FORM</h1>
+  <div class="container">
+    <div> 
+       <form  #SubmitForm="ngForm">
+
+        <div class="form-group">
+          <label for="id">EmpId:</label>
+
+          <input [(ngModel)]="id" id="id" name="idx" type="text" class="form-control" #idx="ngModel" required
+            placeholder="Enter EmpId">
+
+          <div *ngIf="idx.touched && idx.invalid">
+            <div class="alert alert-danger">EmpId is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input [(ngModel)]="name" id="name" name="name" type="text" class="form-control" required #namex="ngModel"
+            placeholder="Enter Name">
+
+          <div class="alert alert-danger" *ngIf="namex.touched && !namex.valid">
+            <div>name is required.</div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="dept">dept:</label>
+          <input [(ngModel)]="dept" id="dept" name="dept" type="text" class="form-control" required #deptx="ngModel"
+            placeholder="Enter Dept">
+
+          <div class="alert alert-danger" *ngIf="deptx.touched && !deptx.valid">
+            <div>dept is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- <button type="submit" class="btn btn-success" [disabled]="SubmitForm.form.invalid"  (click)="submitInfo()">Submit</button> -->
+          <!-- <button type="button" class="btn btn-success" [disabled]="idx.invalid" (click)="delete()">Delete</button>
+        &nbsp;
+        <button type="button" class="btn btn-success"  (click)="getInfo()" >Get Details</button> -->
+          <input type="reset" class="btn btn-success" value="Submit" (click)="submitInfo()"
+            [disabled]="SubmitForm.form.invalid">
+          &nbsp;
+
+          <input type="reset" class="btn btn-success" value="Delete" (click)="delete()" [disabled]="idx.invalid">
+          &nbsp;
+          <input type="reset" class="btn btn-success" value="Get Details" (click)="getInfo()">
+          &nbsp;
+         
+
+        </div>
+      </form>
+    </div>
+    <br><br>
+    <br><br>
+    <div *ngIf="tableValidation">
+      <table class="table" border="2">
+        <thead>
+          <tr>
+            <th>empid</th>
+            <th>name</th>
+            <th>dept</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of obj">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.dept}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br><br>
+      <p class="rishi" style="background-color: lightgreen">Get Request was successfully</p>
+
+
+    </div>
+
+    <div>
+      <p class="rishi" style="background-color:lightgreen" *ngIf="submitValidation">Submitted successfully</p>
+      <p class="rishi" style="background-color:lightgreen" *ngIf="deleteValidation">Deleted successfully</p>
+      <p class="rishi" style="background-color:lightcoral" *ngIf="GetFailure">Get Request was unsuccessfull</p>
+      <p class="rishi" style="background-color:lightcoral" *ngIf="PostFailure">Your Submit was unsuccessfull</p>
+      <p class="rishi" style="background-color:lightcoral" *ngIf="DeleteFailure">Deleted request was unsuccessfull</p>
+    </div>
+
+
